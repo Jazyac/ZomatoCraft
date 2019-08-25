@@ -65,7 +65,7 @@ class ZomatoModule extends Module
                 'Accept: application/json'
             ));
         // set url 
-            curl_setopt($ch, CURLOPT_URL, "https://developers.zomato.com/api/v2.1/search?entity_id=14&entity_type=city&count=20&collection_id=1"); 
+            curl_setopt($ch, CURLOPT_URL, "https://developers.zomato.com/api/v2.1/search?entity_id=259&entity_type=city&count=20&collection_id=1"); 
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $output = curl_exec($ch); 
             if (curl_errno($ch)) {
