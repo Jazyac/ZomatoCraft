@@ -69,11 +69,11 @@ class ZomatoModule extends Module
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $output = curl_exec($ch); 
             if (curl_errno($ch)) {
-                die('Couldn\'t send request: ' . curl_error($ch));
+               $context['JSONrestaurant'] ='Couldn\'t send request: ' . curl_error($ch);
             } else {
                 $resultStatus = curl_getinfo($ch, CURLINFO_HTTP_CODE);
                 if ($resultStatus != 200) {
-                    die('Request failed: HTTP status code: ' . $resultStatus);
+                    $context['JSONrestaurant'] ='Request failed: HTTP status code: ' . $resultStatus;
                 }
                 else{
                     $context['JSONrestaurant'] = $output;

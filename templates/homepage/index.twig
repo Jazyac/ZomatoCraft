@@ -71,6 +71,9 @@
 			font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 			font-size: 0.9em;
 		}
+		.restaurantDiv{
+			border-style: dotted;padding: 1em;margin: 1em;width: 15em;
+		}
 		#container {
 			flex-grow: 1;
 		}
@@ -156,9 +159,16 @@
 			</div>
 			<div id="aside" style="overflow:scroll;">
 				<div class="content">
+					{% set l= "foo" %}
 					{% set JSONrestaurant= "foo" %}
 					{% hook 'Display-Restaurants' %}
-					{{JSONrestaurant}}
+					{%set k= JSONrestaurant|json_decode()%}
+					{% for r in k.restaurants %}
+					<div class="restaurantDiv">   
+						<h3>{{ r.restaurant.name }}</h3>
+						 {{r.restaurant.location.address}}	 <br />
+					</div>
+					{% endfor %}
 				</div>
 			</div>
 		</div>
