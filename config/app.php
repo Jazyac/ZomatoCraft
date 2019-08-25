@@ -18,8 +18,26 @@
  */
 
 return [
-    'modules' => [
-        'my-module' => \modules\Module::class,
+
+    // All environments
+    '*'       => [
+        'modules'   => [
+            'zomato-module' => [
+                'class' => \modules\zomatomodule\ZomatoModule::class,
+            ],
+        ],
+        'bootstrap' => ['zomato-module'],
     ],
-    //'bootstrap' => ['my-module'],
+
+    // Live (production) environment
+    'live'    => [
+    ],
+
+    // Staging (pre-production) environment
+    'staging' => [
+    ],
+
+    // Local (development) environment
+    'local'   => [
+    ],
 ];

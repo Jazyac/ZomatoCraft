@@ -5,7 +5,7 @@
   },
   "autoload": {
     "psr-4": {
-      "modules\\": "modules/"
+      "modules\\zomatomodule\\": "modules/zomatomodule/src"
     }
   },
   "config": {
